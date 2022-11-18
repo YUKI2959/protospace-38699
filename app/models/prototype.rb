@@ -5,7 +5,7 @@ class Prototype < ApplicationRecord
   validates :title, presence: true
   validates :catch_copy, presence: true
   validates :concept, presence: true
-  validates :user, foreign_key: true
+
 
   # アソシエーション
   belongs_to :user
