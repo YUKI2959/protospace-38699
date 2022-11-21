@@ -7,9 +7,13 @@ class Prototype < ApplicationRecord
   validates :concept, presence: true
 
 
+  
+
   # アソシエーション
   belongs_to :user
   # イメージと1対1
   has_one_attached :image
+
+
 
 end
