@@ -7,10 +7,9 @@ class Prototype < ApplicationRecord
   validates :concept, presence: true
 
 
-  
-
   # アソシエーション
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
+  has_many :comments
   # イメージと1対1
   has_one_attached :image
 

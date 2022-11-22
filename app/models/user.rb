@@ -12,4 +12,5 @@ class User < ApplicationRecord
 
   # アソシエーション
   has_many :prototypes
+  has_many :comments
 end
