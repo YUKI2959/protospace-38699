@@ -51,11 +51,9 @@ a {
   display: flex;
   justify-content: space-between;
 }
-
 .logo {
   width: 200px;
 }
-
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -80,7 +78,6 @@ a {
   text-decoration: none;
   user-select: none;
 }
-
 .nav__logout:hover{
   opacity: 0.5;
 }
