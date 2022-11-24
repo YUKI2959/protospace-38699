@@ -8,8 +8,8 @@ class Prototype < ApplicationRecord
 
 
   # アソシエーション
-  belongs_to :user, dependent: :destroy
-  has_many :comments
+  belongs_to :user
+  has_many :comments, dependent: :destroy
   # イメージと1対1
   has_one_attached :image
 
