@@ -22,7 +22,7 @@ class PrototypesController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @prototype.comments.includes(:user)
+    @comments = @prototype.comments
   end
 
   def edit
@@ -30,7 +30,7 @@ class PrototypesController < ApplicationController
 
   def update
     if @prototype.update(prototype_params)
-      redirect_to prototype_path(@prototype.id)
+      redirect_to prototype_path(@prototype)
     else
       render :edit
     end
@@ -40,13 +40,14 @@ class PrototypesController < ApplicationController
     if @prototype.destroy
       redirect_to root_path
     else
-      render :edit
+      redirect_to root_path
     end
   end
 
   private
+
   def prototype_params
-    params.require(:prototype).permit(:title, :catch_copy, :concept, :user, :image).merge(user_id: current_user.id)
+    params.require(:prototype).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
   end
 
   def set_prototype
