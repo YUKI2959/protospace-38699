@@ -11,5 +11,6 @@ class User < ApplicationRecord
   validates :position, presence: true
 
   # アソシエーション
-  has_many :prototypes
+  has_many :prototypes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end
